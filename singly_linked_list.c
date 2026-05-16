@@ -109,8 +109,26 @@ void del_beg(){
 
         //now remove the memory address of temp
         temp = NULL; 
-        
+
         printf("\nDeleted First Node!\n");
+    }
+}
+
+void del_end(){
+    if (head == NULL){
+        printf("List is empty");
+    }
+    else{
+        struct node *temp, *prev;
+        temp = head;
+        while(temp->next != NULL){
+            prev = temp;
+            temp = temp->next;
+        }
+
+        prev->next = NULL;
+        free(temp);
+        temp = NULL;
     }
 }
 
@@ -142,6 +160,9 @@ int main(){
                 break;
             case 4:
                 del_beg();
+                break;
+            case 5:
+                del_end();
                 break;
         }}
     return 0;
