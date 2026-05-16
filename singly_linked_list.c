@@ -91,15 +91,29 @@ void ins_beg(int value){
     }
 }
 
+void del_beg(){
+    if (head == NULL){
+        printf("\nNo linked List exists.");
+    }
+    else{
+        struct node *temp = head;
+        head = head->next;
+        free(temp);
+        temp = NULL; 
+        printf("\nDeleted First Node!\n");
+    }
+}
+
 //baaki main wali chiz, samjh aa hi gaya hoga
 int main(){
     int ch, value;
-    char more;
     
     while(1){
         printf("1. Ins at end\n");
         printf("2. Ins at beg\n");
         printf("3. Display\n");
+        printf("4. Del at beg.\n");
+        printf("5. Del at end.\n");
         printf("Enter option : \n");
         scanf("%d",&ch);
         switch (ch){
@@ -115,6 +129,9 @@ int main(){
                 break;
             case 3:
                 display();
+                break;
+            case 4:
+                del_beg();
                 break;
         }}
     return 0;
