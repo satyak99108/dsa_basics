@@ -115,21 +115,68 @@ void del_beg(){
 }
 
 void del_end(){
+    //if linked list empty
     if (head == NULL){
         printf("List is empty");
     }
+    //if just 1 node in the linked list
+    else if (head->next == NULL){
+        free(head);
+        head = NULL;
+    }
+
     else{
+        //initialize 2 variables
         struct node *temp, *prev;
+
+        //assign temp = head
         temp = head;
+
+        //traverse temp to end
         while(temp->next != NULL){
-            prev = temp;
+            prev = temp; //keep track for prev variable (to change it's prev->next to NULL)
             temp = temp->next;
         }
 
+        //remove the prev->next location (for deletion)
         prev->next = NULL;
+
+        //free the temp (holding the last node)
         free(temp);
         temp = NULL;
     }
+}
+
+void ins_mid(){
+    //to get position
+    int pos; 
+
+    //initialize node
+    struct node *newnode, *temp;
+
+    //temp = head, cuz why not
+    temp = head;
+
+    //get values from user
+    printf("Enter value to be inserted : \n");
+    
+    //giving values directly to newnode->data
+    scanf("%d",&newnode->data); 
+    
+    printf("Enter position of the value : \n");
+    
+    //do i have to explain this too? TwT
+    scanf("%d",&pos); 
+
+    //traverse karwao linked list ko, jab tak pos se kam hai tab tak (imagine a linked list for better understanding)
+    for (int i = 1; i < pos - 1; i++){
+        temp = temp->next;
+    }
+
+    //newnode ka next should be temp ka next
+    //if u visualise a linked list, you will always find newnode back to temp
+    newnode->next = temp->next;
+    temp->next = newnode;
 }
 
 //baaki main wali chiz, samjh aa hi gaya hoga
@@ -142,6 +189,8 @@ int main(){
         printf("3. Display\n");
         printf("4. Del at beg.\n");
         printf("5. Del at end.\n");
+        printf("6. Ins at mid.\n");
+
         printf("Enter option : \n");
         scanf("%d",&ch);
         switch (ch){
@@ -163,6 +212,9 @@ int main(){
                 break;
             case 5:
                 del_end();
+                break;
+            case 6:
+                ins_mid();
                 break;
         }}
     return 0;
