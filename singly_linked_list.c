@@ -92,14 +92,24 @@ void ins_beg(int value){
 }
 
 void del_beg(){
+    //checks for empty linked list
     if (head == NULL){
         printf("\nNo linked List exists.");
     }
+    //if not empty
     else{
+        //assign temp = head
         struct node *temp = head;
+
+        //assign pointer head to head->next (temp is keeping track of first node now)
         head = head->next;
+
+        //free the temp (first node)
         free(temp);
+
+        //now remove the memory address of temp
         temp = NULL; 
+        
         printf("\nDeleted First Node!\n");
     }
 }
