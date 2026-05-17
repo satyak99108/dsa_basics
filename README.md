@@ -9,3 +9,5 @@ Index :
 
 <h6><b>Work in Progress, there may be some mistakes in the code and several topics are yet to be added. Stay Tuned</b></h6>
 <p>Feel free to contribute. :) </p>
+
+<p>Star the repo, acha lagega mujhe :) </p>
