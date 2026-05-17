@@ -3,8 +3,9 @@
 
 Index : 
 1. c.c <i>(ignore that)</i>
-2. linear Search
+2. Linear Search
 3. Singly Linked List
+4. Binary Search
 
 
 <h6><b>Work in Progress, there may be some mistakes in the code and several topics are yet to be added. Stay Tuned</b></h6>
